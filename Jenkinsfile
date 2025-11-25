@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    stage('Build') {
+        stage('Build') {
             steps {
                 // Compile the HelloWorld.java file using javac (if you're not using Maven)
                 script {
@@ -10,7 +10,7 @@ pipeline {
             }
         }
 
-    stage('Test') {
+        stage('Test') {
             steps {
                 // Run unit tests (if using Maven, this would be part of the build)
                 script {
@@ -18,15 +18,4 @@ pipeline {
                 }
             }
         }
-
-
-    post {
-        success {
-            echo 'Build completed successfully!'
-        }
-
-        failure {
-            echo 'Build failed.'
-        }
-    }
 }
